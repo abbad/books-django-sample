@@ -5,12 +5,12 @@ Django Books API sample.
 To Run the code:
 
 ``` Install postgres and create a new user and database schema```
-``` 1. pip install -r requirements.txt ```
-``` 2. python manage.py migrate ```
-``` 3. python manage.py runserver and go to http://127.0.0.1:8000/api/v1/books/ ```
-``` 4. For Tests run python manage test ```
+ 1. pip install -r requirements.txt
+ 2. python manage.py migrate 
+ 3. python manage.py runserver and go to ``` http://127.0.0.1:8000/api/v1/books/ ```
+ 4. For Tests run python manage test 
 
-Or you can run it through ```run_server.sh```
+Or you can run it using ```run_server.sh```. Please make sure that docker and docker-compose are installed. 
 
 I have written a books app that has a model with the following fields:
 
