@@ -22,14 +22,12 @@ class Book(models.Model):
 
     price = models.DecimalField(max_digits=6, decimal_places=2, default=0)
 
-    # No limit for the description field. No performance difference in
-    # PostgreSQL 9, specifically, states that "There is no performance difference among these three types"
     short_description = models.TextField(blank=True, null=True)
 
     # Relations
 
     # As of Django 1.11, get_user_model can now be called at import time, even in modules that define models.
-    author = models.ForeignKey(get_user_model(), blank=True, null=True)
+    author = models.ForeignKey(get_user_model(), blank=True, null=True, on_delete=models.CASCADE)
 
     # Properties
     @property
