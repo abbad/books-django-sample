@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  db:
+    image: postgres
+  web:
+    build: .
+    command: ./run_server.sh
+    volumes:
+      - .:/code
+    links:
+      - db
+    ports:
+      - "8000:8000"
