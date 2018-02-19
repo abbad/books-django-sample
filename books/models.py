@@ -27,7 +27,7 @@ class Book(models.Model):
     # Relations
 
     # As of Django 1.11, get_user_model can now be called at import time, even in modules that define models.
-    author = models.ForeignKey(get_user_model(), blank=True, null=True)
+    author = models.ForeignKey(get_user_model(), blank=True, null=True, on_delete=models.CASCADE)
 
     # Properties
     @property

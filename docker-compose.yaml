@@ -4,11 +4,14 @@ services:
   db:
     image: postgres
   web:
-    build: .
-    command: ./run_server.sh
+    build:
+        context: .
+        dockerfile: Dockerfile
+    command: bash -c "python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
-    links:
-      - db
     ports:
       - "8000:8000"
+    depends_on:
+      - db
+

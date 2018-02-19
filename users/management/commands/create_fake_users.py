@@ -8,4 +8,3 @@ class Command(BaseCommand):
     def handle(self, *args, **options): #pylint: disable=too-many-locals
         """ Handler to create fake users """
         UserFactory.create_batch(10)
-
